@@ -10,6 +10,7 @@ def get_entire_message(file_name):
     print(len(file))
     message_text = "".join("{:08b}".format(ord(c),'b') for c in file)
     return message_text;
+#comment
 
 
 def get_separate_messages(message_text):
