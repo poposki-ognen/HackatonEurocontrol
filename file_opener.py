@@ -3,7 +3,7 @@ current_seek = 0
 current_cat = ""
 current_len = 0
 current_fspec = ""
-data_name = "Hackathon.ast"
+data_name = ""
 
 def print_by_eigth(arr):
     for i in range(0,len(arr),8):
@@ -24,9 +24,9 @@ def get_separate_messages(message_text):
 
 
 
-def get_configuration_for_category(message):
-    category = int(message[:8],2)
-    configuration_file = open("conf\\" + str(category) + ".conf")
+def get_configuration_for_category():
+    global current_cat
+    configuration_file = open("conf\\" + str(current_cat) + ".conf")
     configuration_file = configuration_file.read()
     return configuration_file
 
@@ -60,28 +60,28 @@ def get_message():
     return message
 
 
-current_cat = get_message_category()
-current_len = get_message_length()
-message = get_message()
-print current_cat , current_len , message
-current_cat = get_message_category()
-current_len = get_message_length()
-message = get_message()
-print current_cat , current_len , message
 
 def main(file_name, number_of_cores):
+    global data_name
     data_name = file_name
-    # message = get_entire_message(file_name)
-    # separate_messages = get_separate_messages(message)
-    #
-    # for message in separate_messages:
-    #     try:
-    #         config = get_configuration_for_category(message)
-    #     except:
-    #         print "no config found"
-    #     #implement threading
 
-    message_category = get_message_category()
+    message_cat = get_message_category()
+    i = 1
+    while message_cat != "":
+
+        message_len = get_message_length()
+        print message_len
+        message = get_message()
+        message_cat = get_message_category()
+
+
+        i+=1
+    print i
+
+main("Hackathon.ast",1)
+
+
+
 
     # while message_category != "":
 
