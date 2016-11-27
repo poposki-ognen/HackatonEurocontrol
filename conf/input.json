@@ -1,0 +1,2426 @@
+{
+  "category": {
+
+    "name": "Target Reports",
+    "dataItems": [
+      {
+        "id": "010",
+        "required": "mandatory",
+        "dataItemName": "Data Source Identifier",
+        "dataItemDefinition": "Identification of the system from which the data are received.",
+        "dataItemFormat": {
+          "description": "Two-octet fixed length Data Item.",
+          "fixed": {
+            "length": "2",
+            "bits": [
+              {
+                "from": "16",
+                "to": "9",
+                "bitsNameShort": "SAC",
+                "bitsNameLong": "System Area Code"
+              },
+              {
+                "from": "8",
+                "to": "1",
+                "bitsNameShort": "SIC",
+                "bitsNameLong": "System Identification Code"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "020",
+        "required": "mandatory",
+        "dataItemName": "Target Report Descriptor",
+        "dataItemDefinition": "Type and characteristics of the data as transmitted by a system.",
+        "dataItemFormat": {
+          "description": "Variable length Data Item comprising a first part of one-octet, followed by one-octet extents as necessary.",
+          "variable": {
+            "fixed": [
+              {
+                "length": "1",
+                "bits": [
+                  {
+                    "bit": "8",
+                    "bitsNameShort": "SSR",
+                    "bitValues": [
+                      {
+                        "value": "1"
+
+                      },
+                      {
+                        "value": "0"
+
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "7",
+                    "bitsNameShort": "MS",
+                    "bitValues": [
+                      {
+                        "value": "1"
+
+                      },
+                      {
+                        "value": "0"
+
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "6",
+                    "bitsNameShort": "HF",
+                    "bitValues": [
+                      {
+                        "value": "1"
+                      },
+                      {
+                        "value": "0"
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "5",
+                    "bitsNameShort": "VDL4",
+                    "bitValues": [
+                      {
+                        "value": "1"
+                      },
+                      {
+                        "value": "0"
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "4",
+                    "bitsNameShort": "UAT",
+                    "bitValues": [
+                      {
+                        "value": "1"
+                      },
+                      {
+                        "value": "0"
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "3",
+                    "bitsNameShort": "DME",
+                    "bitValues": [
+                      {
+                        "value": "1"
+                      },
+                      {
+                        "value": "0"
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "2",
+                    "bitsNameShort": "OT",
+                    "bitValues": [
+                      {
+                        "value": "1"
+                      },
+                      {
+                        "value": "0"
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "1",
+                    "fx": "1",
+                    "bitsNameShort": "FX",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "length": "1",
+                "bits": [
+                  {
+                    "bit": "8",
+                    "bitsNameShort": "RAB",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "7",
+                    "bitsNameShort": "SPI",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "6",
+                    "bitsNameShort": "CHN",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "5",
+                    "bitsNameShort": "GBS",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "4",
+                    "bitsNameShort": "CRT",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "3",
+                    "bitsNameShort": "SIM",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "2",
+                    "bitsNameShort": "TST",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "1",
+                    "fx": "1",
+                    "bitsNameShort": "FX",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "030",
+        "required": "optional",
+        "dataItemName": "Warning/Error Conditions",
+        "dataItemDefinition": "Warning/error conditions detected by a system for the target report involved.",
+        "dataItemFormat": {
+          "description": "Variable length Data Item comprising a first part of one-octet, followed by one-octet extents as necessary.",
+          "variable": {
+            "fixed": {
+              "length": "1",
+              "bits": [
+                {
+                  "from": "8",
+                  "to": "2",
+                  "bitsNameShort": "W_E",
+                  "bitsNameLong": "(W/E Value) Warning/error condition value",
+                  "bitValues": [
+                    {
+                      "value": "0"
+                    },
+                    {
+                      "value": "1"
+                    },
+                    {
+                      "value": "3"
+                    },
+                    {
+                      "value": "10"
+                    },
+                    {
+                      "value": "11"
+                    },
+                    {
+                      "value": "12"
+                    },
+                    {
+                      "value": "15"
+                    },
+                    {
+                      "value": "16"
+                    },
+                    {
+                      "value": "17"
+                    },
+                    {
+                      "value": "18"
+                    }
+                  ]
+                },
+                {
+                  "bit": "1",
+                  "fx": "1",
+                  "bitsNameShort": "FX",
+                  "bitValues": [
+                    {
+                      "value": "0"
+                    },
+                    {
+                      "value": "1"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": "041",
+        "required": "mandatory",
+        "dataItemName": "Position in WGS-84 Coordinates",
+        "dataItemDefinition": "Position of a target in WGS-84 Coordinates.",
+        "dataItemFormat": {
+          "description": "Eight-octet fixed length Data Item",
+          "fixed": {
+            "length": "8",
+            "bits": [
+              {
+                "from": "64",
+                "to": "33",
+                "representation": "signed",
+                "bitsNameShort": "Lat",
+                "bitsNameLong": "Latitude in WGS-84 in twos complement.",
+                "bitsUnit": {
+                  "scale": "0.000005364418029785156",
+                  "min": "-90",
+                  "max": "90",
+                  "text": "deg"
+                }
+              },
+              {
+                "from": "32",
+                "to": "1",
+                "representation": "signed",
+                "bitsNameShort": "Lon",
+                "bitsNameLong": "Longitude in WGS-84 in twos complement.",
+                "bitsUnit": {
+                  "scale": "0.000005364418029785156",
+                  "min": "-180",
+                  "max": "180",
+                  "text": "deg"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "042",
+        "required": "optional",
+        "dataItemName": "Position in Cartesian Coordinates",
+        "dataItemDefinition": "Calculated position in Cartesian Coordinates, in two’s complement representation.",
+        "dataItemFormat": {
+          "description": "Six-octet fixed length Data Item.",
+          "fixed": {
+            "length": "6",
+            "bits": [
+              {
+                "from": "48",
+                "to": "25",
+                "representation": "signed",
+                "bitsNameShort": "X",
+                "bitsNameLong": "X",
+                "bitsUnit": {
+                  "scale": "0.5",
+                  "min": "-4194300",
+                  "max": "4194300",
+                  "text": "m"
+                }
+              },
+              {
+                "from": "24",
+                "to": "1",
+                "representation": "signed",
+                "bitsNameShort": "Y",
+                "bitsNameLong": "Y",
+                "bitsUnit": {
+                  "scale": "0.5",
+                  "min": "-4194300",
+                  "max": "4194300",
+                  "text": "m"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "050",
+        "required": "optional",
+        "dataItemName": "Mode-2 Code in Octal Representation",
+        "dataItemDefinition": "Mode-2 code converted into octal representation.",
+        "dataItemFormat": {
+          "description": "Two-octet fixed length Data Item.",
+          "fixed": {
+            "length": "2",
+            "bits": [
+              {
+                "bit": "16",
+                "bitsNameShort": "V",
+                "bitsNameLong": "V",
+                "bitValues": [
+                  {
+                    "value": "0",
+                    "text": "Code validated"
+                  },
+                  {
+                    "value": "1",
+                    "text": "Code not validated"
+                  }
+                ]
+              },
+              {
+                "bit": "15",
+                "bitsNameShort": "G",
+                "bitsNameLong": "G",
+                "bitValues": [
+                  {
+                    "value": "0",
+                    "text": "Default"
+                  },
+                  {
+                    "value": "1",
+                    "text": "Garbled code"
+                  }
+                ]
+              },
+              {
+                "bit": "14",
+                "bitsNameShort": "L",
+                "bitsNameLong": "L",
+                "bitValues": [
+                  {
+                    "value": "0"
+
+                  },
+                  {
+                    "value": "1"
+
+                  }
+                ]
+              },
+              {
+                "bit": "13",
+                "bitsNameShort": "spare",
+                "bitsNameLong": "Spare bit set to 0",
+                "bitChange": "0"
+              },
+              {
+                "form": "12",
+                "to": "1",
+                "representation": "octal",
+                "bitsNameShort": "Mode2",
+                "bitsNameLong": "Mode-2 reply in octal representation"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "055",
+        "required": "optional",
+        "dataItemName": "Mode-1 Code in Octal Representation",
+        "dataItemDefinition": "Mode-1 code converted into octal representation.",
+        "dataItemFormat": {
+          "description": "One-octet fixed length Data Item.",
+          "fixed": {
+            "length": "1",
+            "bits": [
+              {
+                "bit": "8",
+                "bitsNameShort": "V",
+                "bitValues": [
+                  {
+                    "value": "0"
+
+                  },
+                  {
+                    "value": "1"
+
+                  }
+                ]
+              },
+              {
+                "bit": "7",
+                "bitsNameShort": "G",
+                "bitValues": [
+                  {
+                    "value": "0"
+
+                  },
+                  {
+                    "value": "1"
+
+                  }
+                ]
+              },
+              {
+                "bit": "6",
+                "bitsNameShort": "L",
+                "bitValues": [
+                  {
+                    "value": "0"
+                  },
+                  {
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "form": "5",
+                "to": "1",
+                "bitsNameShort": "Mode1",
+                "bitsNameLong": "Mode-1 Code in octal representation"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "070",
+        "dataItemName": "Mode-3/A Code in Octal Representation",
+        "dataItemDefinition": "Mode-3/A code converted into octal representation.",
+        "dataItemFormat": {
+          "description": "Two-octet fixed length Data Item.",
+          "fixed": {
+            "length": "2",
+            "bits": [
+              {
+                "bit": "16",
+                "bitsNameShort": "V",
+                "bitValues": [
+                  {
+                    "value": "0"
+                  },
+                  {
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "bit": "15",
+                "bitsNameShort": "G",
+                "bitValues": [
+                  {
+                    "value": "0"
+                  },
+                  {
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "bit": "14",
+                "bitsNameShort": "L",
+                "bitValues": [
+                  {
+                    "value": "0"
+                  },
+                  {
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "bit": "13",
+                "bitsNameShort": "spare",
+                "bitsNameLong": "Spare bit set to 0",
+                "bitChange": "0"
+              },
+              {
+                "form": "12",
+                "to": "1",
+                "representation": "octal",
+                "bitsNameShort": "Mod3A",
+                "bitsNameLong": "Mode-3/A reply in octal representation"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "090",
+        "dataItemName": "Flight Level in Binary Representation",
+        "dataItemDefinition": "Flight Level (Mode S Altitude) converted into binary two's complement representation.",
+        "dataItemFormat": {
+          "description": "Two-octet fixed length Data Item.",
+          "fixed": {
+            "length": "2",
+            "bits": [
+              {
+                "bit": "16",
+                "bitsNameShort": "V",
+                "bitValues": [
+                  {
+                    "value": "0"
+                  },
+                  {
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "bit": "15",
+                "bitsNameShort": "G",
+                "bitValues": [
+                  {
+                    "value": "0"
+                  },
+                  {
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "form": "14",
+                "to": "1",
+                "representation": "signed",
+                "bitsNameShort": "FL",
+                "bitsNameLong": "Flight Level",
+                "BitsUnit": {
+                  "scale": "0.25",
+                  "text": "FL"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "100",
+        "required": "optional",
+        "dataItemName": "Mode-C Code",
+        "dataItemDefinition": "Mode-C height in Gray notation as received from the transponder together with the confidence level for each reply bit as provided by a MSSR/Mode-S station.",
+        "dataItemFormat": {
+          "description": "Four-octet fixed length Data Item.",
+          "fixed": {
+            "length": "4",
+            "bits": [
+              {
+                "bit": "32",
+                "bitsNameShort": "V",
+                "bitValues": [
+                  {
+                    "value": "0"
+                  },
+                  {
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "bit": "31",
+                "bitsNameShort": "G",
+                "bitValues": [
+                  {
+                    "value": "0"
+                  },
+                  {
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "form": "30",
+                "to": "29",
+                "bitsNameShort": "spare",
+                "bitsNameLong": "Spare bits set to 0",
+                "bitChange": "0"
+              },
+              {
+                "form": "28",
+                "to": "17",
+                "bitsNameShort": "ModeC",
+                "bitsNameLong": "Mode-C reply in Gray notation"
+              },
+              {
+                "form": "16",
+                "to": "13",
+                "bitsNameShort": "spare",
+                "bitsNameLong": "Spare bits set to 0",
+                "bitChange": "0"
+              },
+              {
+                "form": "12",
+                "to": "1",
+                "bitsNameShort": "QXi"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "105",
+        "required": "optional",
+        "dataItemName": "Geometric Height (WGS-84)",
+        "dataItemDefinition": "Vertical distance between the target and the projection of its position on the earth’s ellipsoid, as defined by WGS84, in two’s complement form.",
+        "dataItemFormat": {
+          "description": "Two-octet fixed length Data Item.",
+          "fixed": {
+            "length": "2",
+            "bits": {
+              "form": "16",
+              "to": "1",
+              "representation": "signed",
+              "bitsNameShort": "geometric_height",
+              "bitsNameLong": "Geometric Height (WGS-84)",
+              "BitsUnit": {
+                "scale": "6.25",
+                "min": "-204800",
+                "max": "204800",
+                "text": "ft"
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "110",
+        "required": "optional",
+        "dataItemName": "Measured Height (Local Cartesian Coordinates)",
+        "dataItemDefinition": "Height above local 2D co-ordinate system in reference to the MLT System Reference Point as defined in item I019/610, in two’s complement form, based on a direct measurement not related to barometric pressure.",
+        "dataItemFormat": {
+          "description": "Two-octet fixed length Data Item.",
+          "fixed": {
+            "length": "2",
+            "bits": {
+              "form": "16",
+              "to": "1",
+              "representation": "signed",
+              "bitsNameShort": "MHeight",
+              "bitsNameLong": "Measured Height",
+              "BitsUnit": {
+                "scale": "6.25",
+                "min": "-204800",
+                "max": "204800",
+                "text": "ft"
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "140",
+        "required": "mandatory",
+        "dataItemName": "Time of Day",
+        "dataItemDefinition": "Absolute time stamping expressed as UTC.",
+        "dataItemFormat": {
+          "description": "Three-octet fixed length Data Item.",
+          "fixed": {
+            "length": "3",
+            "bits": {
+              "form": "24",
+              "to": "1",
+              "bitsNameShort": "ToD",
+              "bitsNameLong": "Time of Day",
+              "BitsUnit": {
+                "scale": "0.0078125",
+                "text": "s"
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "161",
+        "required": "optional",
+        "dataItemName": "Track Number",
+        "dataItemDefinition": "An integer value representing a unique reference to a track record within a particular track file.",
+        "dataItemFormat": {
+          "description": "Two-octet fixed length Data Item.",
+          "fixed": {
+            "length": "2",
+            "bits": [
+              {
+                "form": "16",
+                "to": "13",
+                "bitsNameShort": "spare",
+                "bitsNameLong": "Spare bits set to zero",
+                "bitChange": "0"
+              },
+              {
+                "form": "12",
+                "to": "1",
+                "bitsNameShort": "TrkNb",
+                "bitsNameLong": "Track number"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "170",
+        "required": "optional",
+        "dataItemName": "Track Status",
+        "dataItemDefinition": "Status of track.",
+        "dataItemFormat": {
+          "description": "Variable length Data Item comprising a first part of one-octet, followed by one-octet extents as necessary.",
+          "Variable": {
+            "fixed": [
+              {
+                "length": "1",
+                "bits": [
+                  {
+                    "bit": "8",
+                    "bitsNameShort": "CNF",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "7",
+                    "bitsNameShort": "TRE",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "6",
+                    "bitsNameShort": "CST",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      }
+                    ]
+                  },
+                  {
+                    "form": "5",
+                    "to": "4",
+                    "bitsNameShort": "CDM",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      },
+                      {
+                        "value": "2"
+                      },
+                      {
+                        "value": "3"
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "3",
+                    "bitsNameShort": "MAH",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "2",
+                    "bitsNameShort": "STH",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      }
+                    ]
+                  },
+                  {
+                    "bit": "1",
+                    "-fx": "1",
+                    "bitsNameShort": "FX",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "length": "1",
+                "bits": [
+                  {
+                    "bit": "8",
+                    "bitsNameShort": "GHO",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      }
+                    ]
+                  },
+                  {
+                    "form": "7",
+                    "to": "2",
+                    "bitsNameShort": "spare",
+                    "bitsNameLong": "Spare bits set to zero",
+                    "bitChange": "0"
+                  },
+                  {
+                    "bit": "1",
+                    "-fx": "1",
+                    "bitsNameShort": "FX",
+                    "bitValues": [
+                      {
+                        "value": "0"
+                      },
+                      {
+                        "value": "1"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "202",
+        "required": "optional",
+        "dataItemName": "Calculated Track Velocity in Cartesian Coordinates",
+        "dataItemDefinition": "Calculated track velocity expressed in Cartesian Coordinates, in two’s complement representation.",
+        "dataItemFormat": {
+          "description": "Four-octet fixed length Data Item.",
+          "fixed": {
+            "length": "4",
+            "bits": [
+              {
+                "form": "32",
+                "to": "17",
+                "representation": "signed",
+                "bitsNameShort": "Vx",
+                "bitsNameLong": "Vx",
+                "BitsUnit": {
+                  "scale": "0.25",
+                  "min": "-8192",
+                  "max": "8191.75",
+                  "text": "m/s"
+                }
+              },
+              {
+                "form": "1",
+                "to": "16",
+                "representation": "signed",
+                "bitsNameShort": "Vy",
+                "bitsNameLong": "Vy",
+                "BitsUnit": {
+                  "scale": "0.25",
+                  "min": "-8192",
+                  "max": "8191.75",
+                  "text": "m/s"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "210",
+        "required": "optional",
+        "dataItemName": "Calculated Acceleration",
+        "dataItemDefinition": "Calculated Acceleration of the target, in two’s complement form.",
+        "dataItemFormat": {
+          "description": "Two-Octet fixed length data item.",
+          "fixed": {
+            "length": "2",
+            "bits": [
+              {
+                "form": "16",
+                "to": "9",
+                "representation": "signed",
+                "bitsNameShort": "Ax",
+                "bitsNameLong": "Ax",
+                "BitsUnit": {
+                  "scale": "0.25",
+                  "min": "-31",
+                  "max": "31",
+                  "text": "m/s²"
+                }
+              },
+              {
+                "form": "8",
+                "to": "1",
+                "representation": "signed",
+                "bitsNameShort": "Ay",
+                "bitsNameLong": "Ay",
+                "BitsUnit": {
+                  "scale": "0.25",
+                  "min": "-31",
+                  "max": "31",
+                  "text": "m/s²"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "220",
+        "required": "optional",
+        "dataItemName": "Target Address",
+        "dataItemDefinition": "Target address (ICAO 24-bit address) assigned uniquely to each Target.",
+        "dataItemFormat": {
+          "description": "Three-octet fixed length Data Item.",
+          "fixed": {
+            "length": "3",
+            "bits": {
+              "form": "24",
+              "to": "1",
+              "bitsNameShort": "TAddr",
+              "bitsNameLong": "24-bits Target Address"
+            }
+          }
+        }
+      },
+      {
+        "id": "230",
+        "required": "mandatory",
+        "dataItemName": "Communications/ACAS Capability and Flight Status",
+        "dataItemDefinition": "Communications capability of the transponder, capability of the on-board ACAS equipment and flight status.",
+        "dataItemFormat": {
+          "description": "Two-octet fixed length Data Item.",
+          "fixed": {
+            "length": "2",
+            "bits": [
+              {
+                "form": "16",
+                "to": "14",
+                "bitsNameShort": "COM",
+                "bitsNameLong": "Communications capability of the transponder",
+                "bitValues": [
+                  {
+                    "value": "0"
+                  },
+                  {
+                    "value": "1"
+
+                  },
+                  {
+                    "value": "2"
+                  },
+                  {
+                    "value": "3"
+                  },
+                  {
+                    "value": "4"
+                  }
+                ]
+              },
+              {
+                "form": "13",
+                "to": "11",
+                "bitsNameShort": "STAT",
+                "bitsNameLong": "Flight Status",
+                "bitValues": [
+                  {
+                    "value": "0"
+                  },
+                  {
+                    "value": "1"
+                  },
+                  {
+                    "value": "2"
+                  },
+                  {
+                    "value": "3"
+
+                  },
+                  {
+                    "value": "4"
+                  },
+                  {
+                    "value": "5",
+                    "text": "No alert, SPI, aircraft airborne or on ground"
+                  },
+                  {
+                    "value": "6",
+                    "text": "Not assigned"
+                  },
+                  {
+                    "value": "7",
+                    "text": "Information not yet extracted"
+                  }
+                ]
+              },
+              {
+                "form": "10",
+                "to": "9",
+                "bitsNameShort": "spare",
+                "bitsNameLong": "spare bits set to zero",
+                "bitChange": "0"
+              },
+              {
+                "bit": "8",
+                "bitsNameShort": "MSSC",
+                "bitsNameLong": "Mode-S Specific Service Capability",
+                "bitValues": [
+                  {
+                    "value": "0",
+                    "text": "No"
+                  },
+                  {
+                    "value": "1",
+                    "text": "Yes"
+                  }
+                ]
+              },
+              {
+                "bit": "7",
+                "bitsNameShort": "ARC",
+                "bitsNameLong": "Altitude reporting capability",
+                "bitValues": [
+                  {
+                    "value": "0"
+                  },
+                  {
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "bit": "6",
+                "bitsNameShort": "AIC",
+                "bitsNameLong": "Aircraft identification capability",
+                "bitValues": [
+                  {
+                    "value": "0"
+
+                  },
+                  {
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "bit": "5",
+                "bitsNameShort": "B1A",
+                "bitsNameLong": "BDS 1,0 bit 16"
+              },
+              {
+                "form": "4",
+                "to": "1",
+                "bitsNameShort": "B1B",
+                "bitsNameLong": "BDS 1,0 bits 37/40"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "245",
+        "required": "optional",
+        "dataItemName": "Target Identification",
+        "dataItemDefinition": "Target (aircraft or vehicle) identification in 8 characters.",
+        "dataItemFormat": {
+          "description": "Seven-octet fixed length Data Item.",
+          "fixed": {
+            "length": "7",
+            "bits": [
+              {
+                "form": "56",
+                "to": "55",
+                "bitsNameShort": "STI",
+                "bitValues": [
+                  {
+                    "value": "0"
+                  },
+                  {
+                    "value": "1"
+                  },
+                  {
+                    "value": "2"
+                  },
+                  {
+                    "value": "3"
+                  }
+                ]
+              },
+              {
+                "form": "54",
+                "to": "49",
+                "bitsNameShort": "spare",
+                "bitsNameLong": "Spare bits set to zero",
+                "bitChange": "0"
+              },
+              {
+                "form": "48",
+                "to": "1",
+                "representation": "6bitschar",
+                "bitsNameShort": "TId",
+                "bitsNameLong": "Characters 1-8 (coded on 6 bits each) defining target identification"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "250",
+        "required": "optional",
+        "dataItemName": "Mode S MB Data",
+        "dataItemDefinition": "Mode S Comm B data as extracted from the aircraft transponder.",
+        "dataItemFormat": {
+          "description": "Repetitive Data Item starting with a one-octet Field Repetition Indicator (REP) followed by at least one BDS report comprising one seven octet BDS register and one octet BDS code.",
+          "Repetitive": {
+            "fixed": {
+              "length": "8",
+              "bits": [
+                {
+                  "form": "64",
+                  "to": "9",
+                  "representation": "hex",
+                  "bitsNameShort": "MB_Data",
+                  "bitsNameLong": "(MB Data) 56-bit message conveying Mode S Comm B message data"
+                },
+                {
+                  "form": "8",
+                  "to": "5",
+                  "bitsNameShort": "BDS1",
+                  "bitsNameLong": "Comm B Data Buffer Store 1 Address"
+                },
+                {
+                  "form": "4",
+                  "to": "1",
+                  "bitsNameShort": "BDS2",
+                  "bitsNameLong": "Comm B Data Buffer Store 2 Address"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": "260",
+        "required": "mandatory",
+        "dataItemName": "ACAS Resolution Advisory Report",
+        "dataItemDefinition": "Currently active Resolution Advisory (RA), if any, generated by the ACAS associated with the transponder transmitting the report and threat identity data.",
+        "dataItemFormat": {
+          "description": "Seven-octet fixed length Data Item.",
+          "fixed": {
+            "length": "7",
+            "bits": {
+              "form": "56",
+              "to": "1",
+              "bitsNameShort": "MB_Data",
+              "bitsNameLong": "(MB Data) 56-bit message conveying Mode S Comm B message data of BDS Register 3,0."
+            }
+          }
+        }
+      },
+      {
+        "id": "300",
+        "required": "optional",
+        "dataItemName": "Vehicle Fleet Identification",
+        "dataItemDefinition": "Vehicle fleet identification number.",
+        "dataItemFormat": {
+          "description": "One octet fixed length Data Item.",
+          "fixed": {
+            "length": "1",
+            "bits": {
+              "form": "8",
+              "to": "1",
+              "bitsNameShort": "VFI",
+              "bitsNameLong": "Vehicle Fleet Identification",
+              "bitValues": [
+                {
+                  "value": "0"
+                },
+                {
+                  "value": "1"
+                },
+                {
+                  "value": "2"
+                },
+                {
+                  "value": "3"
+                },
+                {
+                  "value": "4"
+                },
+                {
+                  "value": "5"
+                },
+                {
+                  "value": "6"
+                },
+                {
+                  "value": "7"
+                },
+                {
+                  "value": "8"
+                },
+                {
+                  "value": "9"
+                },
+                {
+                  "value": "10"
+                },
+                {
+                  "value": "11"
+                },
+                {
+                  "value": "12"
+                },
+                {
+                  "value": "13"
+                },
+                {
+                  "value": "14"
+                },
+                {
+                  "value": "15"
+                },
+                {
+                  "value": "16"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": "310",
+        "required": "optional",
+        "dataItemName": "Pre-programmed Message",
+        "dataItemDefinition": "Number related to a pre-programmed message that can be transmitted by a vehicle.",
+        "dataItemFormat": {
+          "description": "One octet fixed length Data Item.",
+          "fixed": {
+            "length": "1",
+            "bits": [
+              {
+                "bit": "8",
+                "bitsNameShort": "TRB",
+                "bitValues": [
+                  {
+                    "value": "0"
+                  },
+                  {
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "form": "7",
+                "to": "1",
+                "bitsNameShort": "MSG",
+                "bitValues": [
+                  {
+                    "value": "1"
+
+                  },
+                  {
+                    "value": "2"
+                  },
+                  {
+                    "value": "3"
+                  },
+                  {
+                    "value": "4"
+                  },
+                  {
+                    "value": "5"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "400",
+        "required": "optional",
+        "dataItemName": "Contributing Receivers",
+        "dataItemDefinition": "Overview of Receiver Units, which have contributed to the Target Detection",
+        "dataItemFormat": {
+          "description": "Repetitive Data Item starting with a one-octet Field Repetition Indicator (REP) followed by at least one Contributing Receiver Units list comprising one octet",
+          "Repetitive": {
+            "fixed": {
+              "length": "1",
+              "bits": {
+                "form": "8",
+                "to": "1",
+                "bitsNameShort": "RUx",
+                "bitsNameLong": "RUx Contribution"
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "500",
+        "required": "optional",
+        "dataItemName": "Position Accuracy",
+        "dataItemDefinition": "Standard Deviation of Position",
+        "dataItemFormat": {
+          "description": "Compound Data Item, comprising a primary subfield of one octet, followed by one or more defined subfields.",
+          "Compound": {
+            "Variable": {
+              "fixed": {
+                "length": "1",
+                "bits": [
+                  {
+                    "bit": "8",
+                    "bitsNameShort": "DOP_presence",
+                    "BitsPresence": "1"
+                  },
+                  {
+                    "bit": "7",
+                    "bitsNameShort": "SDP_presence",
+                    "BitsPresence": "2"
+                  },
+                  {
+                    "bit": "6",
+                    "bitsNameShort": "SDH_presence",
+                    "BitsPresence": "3"
+                  },
+                  {
+                    "form": "5",
+                    "to": "2",
+                    "bitsNameShort": "spare",
+                    "bitsNameLong": "Spare bits set to zero",
+                    "bitChange": "0"
+                  },
+                  {
+                    "bit": "1",
+                    "-fx": "1",
+                    "bitsNameShort": "fx",
+                    "bitsNameLong": "Field extension",
+                    "bitValues": [
+                      {
+                        "value": "1"
+                      },
+                      {
+                        "value": "0"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "fixed": [
+              {
+                "length": "6",
+                "bits": [
+                  {
+                    "form": "48",
+                    "to": "33",
+                    "bitsNameShort": "DOPx",
+                    "bitsNameLong": "DOP along x axis",
+                    "BitsUnit": {
+                      "scale": "0.25"
+                    }
+                  },
+                  {
+                    "form": "32",
+                    "to": "17",
+                    "bitsNameShort": "DOPy",
+                    "bitsNameLong": "DOP along y axis",
+                    "BitsUnit": {
+                      "scale": "0.25"
+                    }
+                  },
+                  {
+                    "form": "16",
+                    "to": "1",
+                    "representation": "signed",
+                    "bitsNameShort": "DOPxy",
+                    "bitsNameLong": "p(X,Y)",
+                    "BitsUnit": {
+                      "scale": "0.25"
+                    }
+                  }
+                ]
+              },
+              {
+                "length": "6",
+                "bits": [
+                  {
+                    "form": "48",
+                    "to": "33",
+                    "bitsNameShort": "SDPx",
+                    "bitsNameLong": "Standard Deviation of X component",
+                    "BitsUnit": {
+                      "scale": "0.25",
+                      "text": "m"
+                    }
+                  },
+                  {
+                    "form": "32",
+                    "to": "17",
+                    "bitsNameShort": "SDPy",
+                    "bitsNameLong": "Standard Deviation of Y component",
+                    "BitsUnit": {
+                      "scale": "0.25",
+                      "text": "m"
+                    }
+                  },
+                  {
+                    "form": "16",
+                    "to": "1",
+                    "representation": "signed",
+                    "bitsNameShort": "SDPxy",
+                    "bitsNameLong": "Correlation coefficient in two’s complement",
+                    "BitsUnit": {
+                      "scale": "0.25"
+                    }
+                  }
+                ]
+              },
+              {
+                "length": "2",
+                "bits": {
+                  "form": "16",
+                  "to": "1",
+                  "bitsNameShort": "STD_GH",
+                  "bitsNameLong": "Standard Deviation of Geometric Height",
+                  "BitsUnit": {
+                    "scale": "0.5",
+                    "text": "m"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "RE",
+        "dataItemName": "Reserved Expansion Field",
+        "dataItemDefinition": "Reserved Expansion Field of ASTERIX Cat 020 (Multilateration Target Reports)",
+        "dataItemFormat": {
+          "description": "One byte length field, followed by a one byte items indicator and the encoded items.",
+          "Explicit": {
+            "Compound": {
+              "Variable": {
+                "fixed": {
+                  "length": "1",
+                  "bits": [
+                    {
+                      "bit": "8",
+                      "bitsNameShort": "PA",
+                      "bitsNameLong": "Position Accuracy presence",
+                      "BitsPresence": "1"
+                    },
+                    {
+                      "bit": "7",
+                      "bitsNameShort": "GVV",
+                      "bitsNameLong": "Ground Velocity Vector presence",
+                      "BitsPresence": "2"
+                    },
+                    {
+                      "bit": "6",
+                      "bitsNameShort": "GVA",
+                      "bitsNameLong": "Ground Velocity Accuracy presence",
+                      "BitsPresence": "3"
+                    },
+                    {
+                      "bit": "5",
+                      "bitsNameShort": "TRT",
+                      "bitsNameLong": "Time of Report Transmission presence",
+                      "BitsPresence": "4"
+                    },
+                    {
+                      "bit": "4",
+                      "bitsNameShort": "DA",
+                      "bitsNameLong": "Data Ages presence",
+                      "BitsPresence": "5"
+                    },
+                    {
+                      "form": "3",
+                      "to": "2",
+                      "bitsNameShort": "sb",
+                      "bitsNameLong": "Spare bits set to 0"
+                    },
+                    {
+                      "bit": "1",
+                      "-fx": "1",
+                      "bitsNameShort": "FX",
+                      "bitsNameLong": "Extension indicator"
+                    }
+                  ]
+                }
+              },
+              "Compound": [
+                {
+                  "Variable": {
+                    "fixed": {
+                      "length": "1",
+                      "bits": [
+                        {
+                          "bit": "8",
+                          "bitsNameShort": "DOP",
+                          "bitsNameLong": "DOP of position",
+                          "BitsPresence": "1"
+                        },
+                        {
+                          "bit": "7",
+                          "bitsNameShort": "SDC",
+                          "bitsNameLong": "Standard Deviation of Position (Cartesian)",
+                          "BitsPresence": "2"
+                        },
+                        {
+                          "bit": "6",
+                          "bitsNameShort": "SDH",
+                          "bitsNameLong": "Standard Deviation of Geometric Height",
+                          "BitsPresence": "3"
+                        },
+                        {
+                          "bit": "5",
+                          "bitsNameShort": "SDW",
+                          "bitsNameLong": "Standard Deviation of Position (WGS-84)",
+                          "BitsPresence": "4"
+                        },
+                        {
+                          "form": "4",
+                          "to": "2",
+                          "bitsNameShort": "sb",
+                          "bitsNameLong": "Spare bits set to 0",
+                          "bitChange": "0"
+                        },
+                        {
+                          "bit": "1",
+                          "-fx": "1",
+                          "bitsNameShort": "FX",
+                          "bitsNameLong": "Extension indicator"
+                        }
+                      ]
+                    }
+                  },
+                  "fixed": [
+                    {
+                      "length": "6",
+                      "bits": [
+                        {
+                          "form": "48",
+                          "to": "33",
+                          "bitsNameShort": "DOPx",
+                          "bitsNameLong": "DOP along x axis",
+                          "BitsUnit": {
+                            "scale": "0.25"
+                          }
+                        },
+                        {
+                          "form": "32",
+                          "to": "17",
+                          "bitsNameShort": "DOPy",
+                          "bitsNameLong": "DOP along y axis",
+                          "BitsUnit": {
+                            "scale": "0.25"
+                          }
+                        },
+                        {
+                          "form": "16",
+                          "to": "1",
+                          "representation": "signed",
+                          "bitsNameShort": "DOPxy",
+                          "bitsNameLong": "DOP Covariance Component in two’s complement form",
+                          "BitsUnit": {
+                            "scale": "0.25"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "length": "6",
+                      "bits": [
+                        {
+                          "form": "48",
+                          "to": "33",
+                          "bitsNameShort": "SDCx",
+                          "bitsNameLong": "Standard Deviation of Position of the target expressed in Cartesian coordinates (X component)",
+                          "BitsUnit": {
+                            "scale": "0.25",
+                            "text": "m"
+                          }
+                        },
+                        {
+                          "form": "32",
+                          "to": "17",
+                          "bitsNameShort": "SDCy",
+                          "bitsNameLong": "Standard Deviation of Position of the target expressed in Cartesian coordinates (Y component)",
+                          "BitsUnit": {
+                            "scale": "0.25",
+                            "text": "m"
+                          }
+                        },
+                        {
+                          "form": "16",
+                          "to": "1",
+                          "representation": "signed",
+                          "bitsNameShort": "COVxy",
+                          "bitsNameLong": "XY Covariance Component in two’s complement form",
+                          "BitsUnit": {
+                            "scale": "0.25",
+                            "text": "m"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "length": "2",
+                      "bits": {
+                        "form": "16",
+                        "to": "1",
+                        "bitsNameShort": "SDH",
+                        "bitsNameLong": "Standard Deviation of Geometric Height of the target expressed in WGS-84",
+                        "BitsUnit": {
+                          "scale": "1",
+                          "text": "ft"
+                        }
+                      }
+                    },
+                    {
+                      "length": "6",
+                      "bits": [
+                        {
+                          "form": "48",
+                          "to": "33",
+                          "bitsNameShort": "SDWlat",
+                          "bitsNameLong": "Standard Deviation of Position of the target expressed in WGS-84 (Latitude component)",
+                          "BitsUnit": {
+                            "scale": "0.000005364418029785156",
+                            "text": "deg"
+                          }
+                        },
+                        {
+                          "form": "32",
+                          "to": "17",
+                          "bitsNameShort": "SDWlong",
+                          "bitsNameLong": "Standard Deviation of Position of the target expressed in WGS-84 (Longitude component)",
+                          "BitsUnit": {
+                            "scale": "0.000005364418029785156",
+                            "text": "deg"
+                          }
+                        },
+                        {
+                          "form": "16",
+                          "to": "1",
+                          "representation": "signed",
+                          "bitsNameShort": "COV_WGS",
+                          "bitsNameLong": "Lat/Long Covariance Component in two’s complement form",
+                          "BitsUnit": {
+                            "scale": "0.000005364418029785156",
+                            "text": "deg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Variable": {
+                    "fixed": [
+                      {
+                        "length": "1",
+                        "bits": [
+                          {
+                            "bit": "8",
+                            "bitsNameShort": "SPI",
+                            "bitsNameLong": "Special Position Identification age",
+                            "BitsPresence": "1"
+                          },
+                          {
+                            "bit": "7",
+                            "bitsNameShort": "TI",
+                            "bitsNameLong": "Target Identification age",
+                            "BitsPresence": "2"
+                          },
+                          {
+                            "bit": "6",
+                            "bitsNameShort": "MDB",
+                            "bitsNameLong": "Mode S MB age",
+                            "BitsPresence": "3"
+                          },
+                          {
+                            "bit": "5",
+                            "bitsNameShort": "M3A",
+                            "bitsNameLong": "Mode 3/A Code age",
+                            "BitsPresence": "4"
+                          },
+                          {
+                            "bit": "4",
+                            "bitsNameShort": "FL",
+                            "bitsNameLong": "Flight Level age",
+                            "BitsPresence": "5"
+                          },
+                          {
+                            "bit": "3",
+                            "bitsNameShort": "FS",
+                            "bitsNameLong": "Flight Status age",
+                            "BitsPresence": "6"
+                          },
+                          {
+                            "bit": "2",
+                            "bitsNameShort": "GH",
+                            "bitsNameLong": "Geometric / Measured Height age",
+                            "BitsPresence": "7"
+                          },
+                          {
+                            "bit": "1",
+                            "-fx": "1",
+                            "bitsNameShort": "FX",
+                            "bitsNameLong": "Extension indicator"
+                          }
+                        ]
+                      },
+                      {
+                        "length": "1",
+                        "bits": [
+                          {
+                            "bit": "8",
+                            "bitsNameShort": "TA",
+                            "bitsNameLong": "Target Address age",
+                            "BitsPresence": "8"
+                          },
+                          {
+                            "bit": "7",
+                            "bitsNameShort": "MC",
+                            "bitsNameLong": "Mode C code age",
+                            "BitsPresence": "9"
+                          },
+                          {
+                            "bit": "6",
+                            "bitsNameShort": "MSS",
+                            "bitsNameLong": "Mode-S Specific Service Capability age",
+                            "BitsPresence": "10"
+                          },
+                          {
+                            "bit": "5",
+                            "bitsNameShort": "ARC",
+                            "bitsNameLong": "Altitude reporting capability age",
+                            "BitsPresence": "11"
+                          },
+                          {
+                            "bit": "4",
+                            "bitsNameShort": "AIC",
+                            "bitsNameLong": "Aircraft identification capability age",
+                            "BitsPresence": "12"
+                          },
+                          {
+                            "bit": "3",
+                            "bitsNameShort": "M2",
+                            "bitsNameLong": "Mode-2 Code age",
+                            "BitsPresence": "13"
+                          },
+                          {
+                            "bit": "2",
+                            "bitsNameShort": "M1",
+                            "bitsNameLong": "Mode-1 Code age",
+                            "BitsPresence": "14"
+                          },
+                          {
+                            "bit": "1",
+                            "-fx": "1",
+                            "bitsNameShort": "FX",
+                            "bitsNameLong": "Extension indicator"
+                          }
+                        ]
+                      },
+                      {
+                        "length": "1",
+                        "bits": [
+                          {
+                            "bit": "8",
+                            "bitsNameShort": "ARA",
+                            "bitsNameLong": "ACAS Resolution Advisory age",
+                            "BitsPresence": "15"
+                          },
+                          {
+                            "bit": "7",
+                            "bitsNameShort": "VI",
+                            "bitsNameLong": "Vehicle Fleet Identification age",
+                            "BitsPresence": "16"
+                          },
+                          {
+                            "bit": "6",
+                            "bitsNameShort": "MSG",
+                            "bitsNameLong": "Pre-programmed message age",
+                            "BitsPresence": "17"
+                          },
+                          {
+                            "form": "5",
+                            "to": "2",
+                            "bitsNameShort": "sb",
+                            "bitsNameLong": "Spare bits set to 0",
+                            "bitChange": "0"
+                          },
+                          {
+                            "bit": "1",
+                            "-fx": "1",
+                            "bitsNameShort": "FX",
+                            "bitsNameLong": "Extension indicator"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "fixed": [
+                    {
+                      "length": "1",
+                      "bits": {
+                        "form": "8",
+                        "to": "1",
+                        "bitsNameShort": "SPI",
+                        "bitsNameLong": "Special Position Identification Age",
+                        "BitsUnit": {
+                          "scale": "0.1",
+                          "text": "s"
+                        }
+                      }
+                    },
+                    {
+                      "length": "1",
+                      "bits": {
+                        "form": "8",
+                        "to": "1",
+                        "bitsNameShort": "TI",
+                        "bitsNameLong": "Target Identification Age",
+                        "BitsUnit": {
+                          "scale": "0.1",
+                          "text": "s"
+                        }
+                      }
+                    },
+                    {
+                      "length": "1",
+                      "bits": {
+                        "form": "8",
+                        "to": "1",
+                        "bitsNameShort": "M3A",
+                        "bitsNameLong": "Mode-3/A Code Age",
+                        "BitsUnit": {
+                          "scale": "0.1",
+                          "text": "s"
+                        }
+                      }
+                    },
+                    {
+                      "length": "1",
+                      "bits": {
+                        "form": "8",
+                        "to": "1",
+                        "bitsNameShort": "FL",
+                        "bitsNameLong": "Flight Level Age",
+                        "BitsUnit": {
+                          "scale": "0.1",
+                          "text": "s"
+                        }
+                      }
+                    },
+                    {
+                      "length": "1",
+                      "bits": {
+                        "form": "8",
+                        "to": "1",
+                        "bitsNameShort": "STAT",
+                        "bitsNameLong": "Flight Status Age",
+                        "BitsUnit": {
+                          "scale": "0.1",
+                          "text": "s"
+                        }
+                      }
+                    },
+                    {
+                      "length": "1",
+                      "bits": {
+                        "form": "8",
+                        "to": "1",
+                        "bitsNameShort": "GH",
+                        "bitsNameLong": "Geometric / Measured Height Age",
+                        "BitsUnit": {
+                          "scale": "0.1",
+                          "text": "s"
+                        }
+                      }
+                    },
+                    {
+                      "length": "1",
+                      "bits": {
+                        "form": "8",
+                        "to": "1",
+                        "bitsNameShort": "TA",
+                        "bitsNameLong": "Target Address Age",
+                        "BitsUnit": {
+                          "scale": "0.1",
+                          "text": "s"
+                        }
+                      }
+                    },
+                    {
+                      "length": "1",
+                      "bits": {
+                        "form": "8",
+                        "to": "1",
+                        "bitsNameShort": "MC",
+                        "bitsNameLong": "Mode C Code Age",
+                        "BitsUnit": {
+                          "scale": "0.1",
+                          "text": "s"
+                        }
+                      }
+                    },
+                    {
+                      "length": "1",
+                      "bits": {
+                        "form": "8",
+                        "to": "1",
+                        "bitsNameShort": "MSSC",
+                        "bitsNameLong": "Mode-S Specific Service Capability Age",
+                        "BitsUnit": {
+                          "scale": "0.1",
+                          "text": "s"
+                        }
+                      }
+                    },
+                    {
+                      "length": "1",
+                      "bits": {
+                        "form": "8",
+                        "to": "1",
+                        "bitsNameShort": "ARC",
+                        "bitsNameLong": "Altitude Reporting Capability Age",
+                        "BitsUnit": {
+                          "scale": "0.1",
+                          "text": "s"
+                        }
+                      }
+                    },
+                    {
+                      "length": "1",
+                      "bits": {
+                        "form": "8",
+                        "to": "1",
+                        "bitsNameShort": "AIC",
+                        "bitsNameLong": "Aircraft Identification Capability age",
+                        "BitsUnit": {
+                          "scale": "0.1",
+                          "text": "s"
+                        }
+                      }
+                    },
+                    {
+                      "length": "1",
+                      "bits": {
+                        "form": "8",
+                        "to": "1",
+                        "bitsNameShort": "M2",
+                        "bitsNameLong": "Mode-2 Code Age",
+                        "BitsUnit": {
+                          "scale": "0.1",
+                          "text": "s"
+                        }
+                      }
+                    },
+                    {
+                      "length": "1",
+                      "bits": {
+                        "form": "8",
+                        "to": "1",
+                        "bitsNameShort": "M1",
+                        "bitsNameLong": "Mode-1 Code Age",
+                        "BitsUnit": {
+                          "scale": "0.1",
+                          "text": "s"
+                        }
+                      }
+                    },
+                    {
+                      "length": "1",
+                      "bits": {
+                        "form": "8",
+                        "to": "1",
+                        "bitsNameShort": "ARA",
+                        "bitsNameLong": "ACAS Resolution Advisory Age",
+                        "BitsUnit": {
+                          "scale": "0.1",
+                          "text": "s"
+                        }
+                      }
+                    },
+                    {
+                      "length": "1",
+                      "bits": {
+                        "form": "8",
+                        "to": "1",
+                        "bitsNameShort": "VI",
+                        "bitsNameLong": "Vehicle Fleet Identification Age",
+                        "BitsUnit": {
+                          "scale": "0.1",
+                          "text": "s"
+                        }
+                      }
+                    },
+                    {
+                      "length": "1",
+                      "bits": {
+                        "form": "8",
+                        "to": "1",
+                        "bitsNameShort": "MSG",
+                        "bitsNameLong": "Pre-programmed Message Age",
+                        "BitsUnit": {
+                          "scale": "0.1",
+                          "text": "s"
+                        }
+                      }
+                    }
+                  ],
+                  "Repetitive": {
+                    "fixed": {
+                      "length": "2",
+                      "bits": [
+                        {
+                          "form": "16",
+                          "to": "13",
+                          "bitsNameShort": "BDS1",
+                          "bitsNameLong": "Comm B Data Buffer Store 1 Address"
+                        },
+                        {
+                          "form": "12",
+                          "to": "9",
+                          "bitsNameShort": "BDS2",
+                          "bitsNameLong": "Comm B Data Buffer Store 2 Address"
+                        },
+                        {
+                          "form": "8",
+                          "to": "1",
+                          "bitsNameShort": "MBA",
+                          "bitsNameLong": "Age of the information in the BDS report indicated in bits 16/9",
+                          "BitsUnit": {
+                            "scale": "0.1",
+                            "text": "s"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "fixed": [
+                {
+                  "length": "4",
+                  "bits": [
+                    {
+                      "bit": "32",
+                      "bitsNameShort": "RE",
+                      "bitsNameLong": "Range Exceeded Indicator",
+                      "bitValues": [
+                        {
+                          "value": "1"
+
+                        },
+                        {
+                          "value": "0"
+                        }
+                      ]
+                    },
+                    {
+                      "form": "31",
+                      "to": "17",
+                      "bitsNameShort": "GS",
+                      "bitsNameLong": "Ground Speed referenced to WGS-84",
+                      "BitsUnit": {
+                        "scale": "0.00006103515625",
+                        "min": "0",
+                        "max": "2",
+                        "text": "NM/s"
+                      }
+                    },
+                    {
+                      "form": "16",
+                      "to": "1",
+                      "bitsNameShort": "TA",
+                      "bitsNameLong": "Track Angle clockwise reference to “True North”",
+                      "BitsUnit": {
+                        "scale": "0.0054931640625",
+                        "text": "deg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "length": "2",
+                  "bits": [
+                    {
+                      "form": "16",
+                      "to": "9",
+                      "bitsNameShort": "GSSD",
+                      "bitsNameLong": "Standard deviation of the Ground Speed",
+                      "BitsUnit": {
+                        "scale": "0.00006103515625",
+                        "text": "NM/s"
+                      }
+                    },
+                    {
+                      "form": "8",
+                      "to": "1",
+                      "bitsNameShort": "TASD",
+                      "bitsNameLong": "Standard deviation of the Track Angle",
+                      "BitsUnit": {
+                        "scale": "0.087890625",
+                        "min": "0",
+                        "max": "22.5",
+                        "text": "deg"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "length": "3",
+                  "bits": {
+                    "form": "24",
+                    "to": "1",
+                    "bitsNameShort": "TRT",
+                    "bitsNameLong": "Time of ASTERIX Report Transmission",
+                    "BitsUnit": {
+                      "scale": "0.0078125",
+                      "text": "s"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": "SP",
+        "required": "optional",
+        "dataItemName": "SP",
+        "dataItemDefinition": "SP",
+        "dataItemFormat": {
+          "description": "Fixed",
+          "Explicit": {
+            "fixed": {
+              "length": "1",
+              "bits": {
+                "form": "8",
+                "to": "1",
+                "bitsNameShort": "SP",
+                "bitsNameLong": "SP"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "UAP": {
+      "uapItems": [
+        {
+          "frn": "1",
+          "length": "2",
+          "text": "010"
+        },
+        {
+          "frn": "2",
+          "length": "1+",
+          "text": "020"
+        },
+        {
+          "frn": "3",
+          "length": "3",
+          "text": "140"
+        },
+        {
+          "frn": "4",
+          "length": "8",
+          "text": "041"
+        },
+        {
+          "frn": "5",
+          "length": "6",
+          "text": "042"
+        },
+        {
+          "frn": "6",
+          "length": "2",
+          "text": "161"
+        },
+        {
+          "frn": "7",
+          "length": "1+",
+          "text": "170"
+        },
+        {
+          "frn": "8",
+          "length": "2",
+          "text": "070"
+        },
+        {
+          "frn": "9",
+          "length": "4",
+          "text": "202"
+        },
+        {
+          "frn": "10",
+          "length": "2",
+          "text": "090"
+        },
+        {
+          "frn": "11",
+          "length": "4",
+          "text": "100"
+        },
+        {
+          "frn": "12",
+          "length": "3",
+          "text": "220"
+        },
+        {
+          "frn": "13",
+          "length": "7",
+          "text": "245"
+        },
+        {
+          "frn": "14",
+          "length": "2",
+          "text": "110"
+        },
+        {
+          "frn": "15",
+          "length": "2",
+          "text": "105"
+        },
+        {
+          "frn": "16",
+          "length": "2",
+          "text": "210"
+        },
+        {
+          "frn": "17",
+          "length": "1",
+          "text": "300"
+        },
+        {
+          "frn": "18",
+          "length": "1",
+          "text": "310"
+        },
+        {
+          "frn": "19",
+          "length": "1+n",
+          "text": "500"
+        },
+        {
+          "frn": "20",
+          "length": "1+1+",
+          "text": "400"
+        },
+        {
+          "frn": "21",
+          "length": "1+8n",
+          "text": "250"
+        },
+        {
+          "frn": "22",
+          "length": "2",
+          "text": "230"
+        },
+        {
+          "frn": "23",
+          "length": "7",
+          "text": "260"
+        },
+        {
+          "frn": "24",
+          "length": "1+",
+          "text": "030"
+        },
+        {
+          "frn": "25",
+          "length": "1",
+          "text": "055"
+        },
+        {
+          "frn": "26",
+          "length": "2",
+          "text": "050"
+        },
+        {
+          "frn": "27",
+          "length": "1",
+          "text": "RE"
+        },
+        {
+          "frn": "28",
+          "length": "-",
+          "text": "SP"
+        }
+      ]
+    }
+  }
+}
+
